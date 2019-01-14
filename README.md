@@ -1,2 +1,2 @@
-# PH_Market_Analysis
+# PH Market Analysis
 Analyzing Philippine Market Using Pandas and Matplotlib
