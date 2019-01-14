@@ -10,9 +10,16 @@ def get_ph_20_year_bond_yield():
     df.drop(['Open', 'High', 'Low', 'Change %'], axis=1, inplace=True)
     return df
 
+def get_ph_25_year_bond_yield():
+    df = pd.read_csv('Data/Philippines 25-Year Bond Yield Historical Data.csv')
+    df.set_index('Date', inplace=True)
+    df.drop(['Open', 'High', 'Low', 'Change %'], axis=1, inplace=True)
+    return df
 
 ph_20_yr_bond = get_ph_20_year_bond_yield()
+ph_25_yr_bond = get_ph_25_year_bond_yield()
 
-ph_20_yr_bond.plot()
+ph_20_yr_bond.plot(label='20 yr bond yield')
+ph_25_yr_bond.plot(label='25 yr bond yield')
 plt.legend(loc=4)
 plt.show()
