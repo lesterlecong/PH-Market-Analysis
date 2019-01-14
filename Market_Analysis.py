@@ -4,11 +4,15 @@ from matplotlib import style
 
 style.use('fivethirtyeight')
 
-df = pd.read_csv('Data/Philippines 20-Year Bond Yield Historical Data.csv')
-df.set_index('Date', inplace=True)
-df.drop(['Open', 'High', 'Low', 'Change %'], axis=1, inplace=True)
-print(df.head())
+def get_ph_20_year_bond_yield():
+    df = pd.read_csv('Data/Philippines 20-Year Bond Yield Historical Data.csv')
+    df.set_index('Date', inplace=True)
+    df.drop(['Open', 'High', 'Low', 'Change %'], axis=1, inplace=True)
+    return df
 
-df.plot()
+
+ph_20_yr_bond = get_ph_20_year_bond_yield()
+
+ph_20_yr_bond.plot()
 plt.legend(loc=4)
 plt.show()
